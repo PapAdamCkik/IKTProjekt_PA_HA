@@ -1,8 +1,9 @@
 import time
 import os
 menu = 0
+tomb=[0,0,0,0,0,0,0,0,0]
 while menu!=5:
-# tomb = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+
 
     if menu== 0:
         print("┬ ┬┌─┐┬  ┬  ┌─┐┬ ")                                                 
@@ -11,7 +12,7 @@ while menu!=5:
         print("┬  ┬┌─┐│┬  ┌─┐┌─┐┌─┐┌─┐  ┌─┐┌─┐┬  ┌─┐┌┬┐┌─┐┌┬┐┌─┐┌┬┐ o")                                                                                                                
         print("└┐┌┘├─┤ │  ├─┤└─┐└─┐┌─┘  ├┤ ├┤ │  ├─┤ ││├─┤ │ │ │ │ ") 
         print(" └┘ ┴ ┴ ┴─┘┴ ┴└─┘└─┘└─┘  └  └─┘┴─┘┴ ┴─┴┘┴ ┴ ┴ └─┘ ┴  o")
-        print("_______________________________________________")                                                     
+        print("______________________________________________________")                                                     
         print("1) 3a feladat")
         print("2) 3b feladat")
         print("3) 3c feladat")
@@ -19,22 +20,35 @@ while menu!=5:
         print("5) Kilépés")
         menu = int(input())
     
+    os.system("cls")
+
     if menu == 1:
         print("3a feladat")
+        for i in range(len(tomb)):
+            ujszam = input()
+            tomb[i] = ujszam
         menu = 0
     elif menu == 2:
         print("3b feladat")
+        for i in range(len(tomb)):
+            ujszam = input()
+            tomb[i] = ujszam
         menu = 0
     elif menu == 3:
         print("3c feladat")
+        for i in range(len(tomb)):
+            ujszam = input()
+            tomb[i] = ujszam
         menu = 0
     elif menu == 4:
         print("3d feladat")
+        for i in range(len(tomb)):
+            ujszam = input()
+            tomb[i] = ujszam
         menu = 0
     elif menu == 5:
         print('')
     else:
-        
         print("Jó számot adj meg!")
         
 
@@ -45,5 +59,5 @@ while menu!=5:
         # print(tomb)
     #else:
     # itt fog futni a kód    
-print("viszlát!")
-time.sleep(3)   
+print("viszlát!")   
+exit
