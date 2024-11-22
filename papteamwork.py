@@ -43,6 +43,7 @@ while menu!=5:
             tomb = []
             for i in range(n*m):
                 ujszam = input()
+                tomb.append(ujszam)
         menu = 0
     elif menu == 2:
         print("3b feladat")
@@ -62,6 +63,7 @@ while menu!=5:
             tomb = []
             for i in range(n*m):
                 ujszam = input()
+                tomb.append(ujszam)
         print(tomb)
         menu = 0
     elif menu == 3:
@@ -82,6 +84,7 @@ while menu!=5:
             tomb = []
             for i in range(n*m):
                 ujszam = input()
+                tomb.append(ujszam)
         print(tomb)
         menu = 0
     elif menu == 4:
@@ -102,6 +105,7 @@ while menu!=5:
             tomb = []
             for i in range(n*m):
                 ujszam = input()
+                tomb.append(ujszam)
         print(tomb)
         menu = 0
     elif menu == 5:
