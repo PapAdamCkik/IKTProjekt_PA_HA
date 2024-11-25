@@ -28,6 +28,14 @@ while menu!=6:
     if menu == 1:
         print("3a feladat")
         print(tomb)
+        f1tomb=[]
+        for i in range (n):
+            kutya1=0
+            for i in range(0, len(tomb), 3):
+                kutya1+=i
+            f1tomb.append(kutya1)
+            kutya1=0
+        print(f1tomb)
         menu = 0
     elif menu == 2:
         print("3b feladat")
