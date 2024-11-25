@@ -4,7 +4,7 @@ import random
 menu = 0
 menu2 = 0
 tomb=[]
-while menu!=5:
+while menu!=6:
 
 
     if menu== 0:
@@ -19,78 +19,33 @@ while menu!=5:
         print("2) 3b feladat")
         print("3) 3c feladat")
         print("4) 3d feladat")
-        print("5) Kilépés")
+        print(f"5) tömb modositása: {tomb}")
+        print("6) Kilépés")
         menu = int(input())
     
     os.system("cls")
 
     if menu == 1:
-        
         print("3a feladat")
-        print("1) feltöltés randommal")
-        print("2) feltöltés billentyüzetröl")
-        menu2 = int(input())
-        if menu2==1 :
-            n=int(input("n:"))
-            m=int(input("m:"))
-            tomb = []
-            for i in range(n*m):
-                ujszam = random.randint(1,10)
-                tomb.append(ujszam)
-        elif menu2==2 :
-            n=int(input("n:"))
-            m=int(input("m:"))
-            tomb = []
-            for i in range(n*m):
-                ujszam = input()
-                tomb.append(ujszam)
+        print(tomb)
         menu = 0
     elif menu == 2:
         print("3b feladat")
-        print("1) feltöltés randommal")
-        print("2) feltöltés billentyüzetröl")
-        menu2 = int(input())
-        if menu2==1 :
-            n=int(input("n:"))
-            m=int(input("m:"))
-            tomb = []
-            for i in range(n*m):
-                ujszam = random.randint(1,10)
-                tomb.append(ujszam)
-        elif menu2==2 :
-            n=int(input("n:"))
-            m=int(input("m:"))
-            tomb = []
-            for i in range(n*m):
-                ujszam = input()
-                tomb.append(ujszam)
         print(tomb)
         menu = 0
     elif menu == 3:
         print("3c feladat")
-        print("1) feltöltés randommal")
-        print("2) feltöltés billentyüzetröl")
-        menu2 = int(input())
-        if menu2==1 :
-            n=int(input("n:"))
-            m=int(input("m:"))
-            tomb = []
-            for i in range(n*m):
-                ujszam = random.randint(1,10)
-                tomb.append(ujszam)
-        elif menu2==2 :
-            n=int(input("n:"))
-            m=int(input("m:"))
-            tomb = []
-            for i in range(n*m):
-                ujszam = input()
-                tomb.append(ujszam)
         print(tomb)
         menu = 0
     elif menu == 4:
         print("3d feladat")
+        print(tomb)
+        menu = 0
+    elif menu == 5:
+        print("tömb modositása")
         print("1) feltöltés randommal")
         print("2) feltöltés billentyüzetröl")
+        print("tömb tartalma", tomb)
         menu2 = int(input())
         if menu2==1 :
             n=int(input("n:"))
@@ -106,13 +61,12 @@ while menu!=5:
             for i in range(n*m):
                 ujszam = input()
                 tomb.append(ujszam)
-        print(tomb)
-        menu = 0
-    elif menu == 5:
+        menu=0
+    elif menu == 6:
         print('')
     else:
         print("Jó számot adj meg!")
+    
 
 os.system("cls")
-print("viszlát!")   
-exit
+print("viszlát!")
