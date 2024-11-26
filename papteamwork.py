@@ -1,7 +1,7 @@
 import time
 import os
 import random
-menu = 0
+menu = 5
 menu2 = 0
 tomb=[]
 while menu!=6:
@@ -29,12 +29,14 @@ while menu!=6:
         print("3a feladat")
         print(tomb)
         f1tomb=[]
+        f1m=-1
+        kutya1=0
         for i in range (n):
             kutya1=0
-            for i in range(0, len(tomb), 3):
-                kutya1+=i
+            f1m+=1
+            for i in range(f1m, len(tomb), n):
+                kutya1+=tomb[i]
             f1tomb.append(kutya1)
-            kutya1=0
         print(f1tomb)
         menu = 0
     elif menu == 2:
