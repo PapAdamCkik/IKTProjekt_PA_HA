@@ -38,6 +38,19 @@ while menu!=6:
                 kutya1+=tomb[i]
             f1tomb.append(kutya1)
         print(f1tomb)
+        maxi=0
+        i=0
+        for i in range(0,len(f1tomb),1):
+            if f1tomb[i]>f1tomb[maxi]:
+                maxi=i
+        abszgyku=maxi+1
+        print(abszgyku)
+        kat=0
+        katcheck=[]
+        for i in range(tomb):
+            katcheck.append(tomb(i))
+            if i//n == i/n:
+                print("todo remove this")
         menu = 0
     elif menu == 2:
         print("3b feladat")
@@ -69,7 +82,7 @@ while menu!=6:
             m=int(input("m:"))
             tomb = []
             for i in range(n*m):
-                ujszam = input()
+                ujszam = int(input())
                 tomb.append(ujszam)
         menu=0
     elif menu == 6:
