@@ -79,6 +79,33 @@ while menu!=6:
     elif menu == 4:
         print("3d feladat")
         print(tomb)
+        f4tomb=[]
+        f4m=0
+        holtverseny=0
+        for i in range(0,n,1):
+            for i in range(f4m, len(tomb), n ):
+
+                f4tomb.append(tomb[i])
+                print(f4tomb)
+                legnagyobb=f4tomb[0]
+
+            for i in range(1,len(f4tomb),1):
+                if legnagyobb<f4tomb[i]:
+                    legnagyobb=f4tomb[i]
+
+            if f4tomb.count(legnagyobb)>=2:
+                holtverseny+=10
+                    
+            else:
+                print('k')
+            f4m+=1
+            f4tomb.clear()
+            print(legnagyobb)
+            print(holtverseny)        
+        if holtverseny>1:
+            print('igen.')
+        else:
+            print('nem.')
         menu = 0
         time.sleep(sleep)
     elif menu == 5:
