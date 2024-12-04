@@ -42,14 +42,48 @@ while menu!=6:
         for i in range(0,len(f1tomb),1):
             if f1tomb[i]>f1tomb[maxi]:
                 maxi=i
-        abszgyku=maxi+1
-        print(abszgyku)
-        kat=0
-        katcheck=[]
-        for i in range(tomb):
-            katcheck.append(tomb(i))
-            if i//n == i/n:
-                print("todo remove this")
+        abszgyku=maxi
+        print(abszgyku+1)
+        f1tomb.clear()
+        f1m=n
+        sorszam=0
+        i=0
+        nyert=0
+        l=0
+        for l in range (m):
+            f1tomb.clear()
+            while i!=f1m:
+                f1tomb.append(tomb[i])
+                i+=1
+            f1m+=n
+            maxi=0
+            k=0
+            for k in range(0,len(f1tomb),1):
+                if f1tomb[k]>f1tomb[maxi]:
+                    maxi=k
+            db=0
+            u=0
+            if maxi==abszgyku:
+                for u in range(0,len(f1tomb),1):
+                    if f1tomb[u]==f1tomb[maxi]:
+                        db+=1
+                if db == 1:
+                    print(f"{sorszam+1}. kategóriában: {"Nyert"}")
+                    nyert+=1
+                else:
+                    print(f"{sorszam+1}. kategóriában: {"Döntetlen"}")
+                
+            else:
+                for u in range(0,len(f1tomb),1):
+                    if f1tomb[u]==f1tomb[maxi]:
+                        db+=1
+                if db == 1:
+                    print(f"{sorszam+1}. kategóriában: {"nem nyert"}")
+                else:
+                    print(f"{sorszam+1}. kategóriában: {"Döntetlen"}")
+            sorszam+=1
+            
+        print(f"Az abszolút győztes kutya {nyert} kategóriában nyert. ")
         menu = 0
         time.sleep(sleep)
     elif menu == 2:
@@ -86,7 +120,6 @@ while menu!=6:
             for i in range(f4m, len(tomb), n ):
 
                 f4tomb.append(tomb[i])
-                print(f4tomb)
                 legnagyobb=f4tomb[0]
 
             for i in range(1,len(f4tomb),1):
@@ -96,12 +129,8 @@ while menu!=6:
             if f4tomb.count(legnagyobb)>=2:
                 holtverseny+=10
                     
-            else:
-                print('k')
             f4m+=1
-            f4tomb.clear()
-            print(legnagyobb)
-            print(holtverseny)        
+            f4tomb.clear()        
         if holtverseny>1:
             print('igen.')
         else:
@@ -111,7 +140,7 @@ while menu!=6:
     elif menu == 5:
         if times==1:
             print("┬ ┬┌─┐┬  ┬  ┌─┐┬ ")                                                 
-            print("├─┤├┤ │  │  │ ││ ")                                                   
+            print("├─┤├┤ │  │  │ ││ ")            
             print("┴ ┴└─┘┴─┘┴─┘└─┘o ")
             print("Elösször töltsd fel a tömböt!")
         if times>1:
