@@ -68,19 +68,19 @@ while menu!=6:
                     if f1tomb[u]==f1tomb[maxi]:
                         db+=1
                 if db == 1:
-                    print(f"{sorszam+1}. kategóriában: {"Nyert"}")
+                    print(f"{sorszam+1}. kategóriában: Nyert")
                     nyert+=1
                 else:
-                    print(f"{sorszam+1}. kategóriában: {"Döntetlen"}")
+                    print(f"{sorszam+1}. kategóriában: Döntetlen")
                 
             else:
                 for u in range(0,len(f1tomb),1):
                     if f1tomb[u]==f1tomb[maxi]:
                         db+=1
                 if db == 1:
-                    print(f"{sorszam+1}. kategóriában: {"nem nyert"}")
+                    print(f"{sorszam+1}. kategóriában: nem nyert")
                 else:
-                    print(f"{sorszam+1}. kategóriában: {"Döntetlen"}")
+                    print(f"{sorszam+1}. kategóriában: Döntetlen")
             sorszam+=1
             
         print(f"Az abszolút győztes kutya {nyert} kategóriában nyert. ")
@@ -155,38 +155,45 @@ while menu!=6:
             print("tömb tartalma", tomb)
         
         menu2 = int(input())
-        
-        if menu2==1 :
-            n=int(input("n:"))
-            m=int(input("m:"))
-            tomb = []
-            for i in range(n*m):
-                ujszam = random.randint(1,10)
-                tomb.append(ujszam)
-        elif menu2==2 :
-            n=int(input("n:"))
-            m=int(input("m:"))
-            print("10 és 1 között kell számot megadnod!")
-            tomb = []
-            for i in range(n*m):
-                ujszam = int(input())
-                tomb.append(ujszam)
-        elif menu2==3 and times==2:
-            modositani=int(input("Modositando szám helye:"))
-            számmodositás=int(input(f"A tomb {modositani}. elemének száma legyen:"))
-            if számmodositás<=10 and számmodositás>=1:
-                tomb[modositani-1]=számmodositás
-            else:
-                print('10 és 1 között kell számot megadnod!!')
-                time.sleep(sleep)
-        elif menu2==4:
-            sleep=int(input("Várakozási idő:"))
-        menu=0
-        times=2
+        if times==1 and menu2 < 1 or times==1 and menu2 > 2:
+            if tomb==[]:
+                menu = 5
+                times = 1
+        elif times==2 and menu2 < 1 or times==1 and menu2 > 4:
+            menu=5
+            times=2
+        else:
+            if menu2==1 :
+                n=int(input("n:"))
+                m=int(input("m:"))
+                tomb = []
+                for i in range(n*m):
+                    ujszam = random.randint(1,10)
+                    tomb.append(ujszam)
+            elif menu2==2 :
+                n=int(input("n:"))
+                m=int(input("m:"))
+                print("10 és 1 között kell számot megadnod!")
+                tomb = []
+                for i in range(n*m):
+                    ujszam = int(input())
+                    tomb.append(ujszam)
+            elif menu2==3 and times==2:
+                modositani=int(input("Modositando szám helye:"))
+                számmodositás=int(input(f"A tomb {modositani}. elemének száma legyen:"))
+                if számmodositás<=10 and számmodositás>=1:
+                    tomb[modositani-1]=számmodositás
+                else:
+                    print('10 és 1 között kell számot megadnod!!')
+                    time.sleep(sleep)
+            elif menu2==4:
+                sleep=int(input("Várakozási idő:"))
+            menu=0
+            times=2
     elif menu == 6:
         print('')
     else:
-        print("Jó számot adj meg!")
+        menu=0
     
 
 os.system("cls")
