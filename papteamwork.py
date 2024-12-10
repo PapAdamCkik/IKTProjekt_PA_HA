@@ -106,8 +106,13 @@ while menu!=6:
         menu = 0
         time.sleep(sleep)
     elif menu == 3:
+        f3m=0
         print("3c feladat")
         print(tomb)
+        for i in range(n):
+            if tomb[i] > tomb[i+n]:
+                f3m+=1
+        print(f3m)
         menu = 0
         time.sleep(sleep)
     elif menu == 4:
