@@ -112,7 +112,7 @@ while menu!=6:
         for i in range(n):
             if tomb[i] > tomb[i+n]:
                 f3m+=1
-        print(f3m)
+        print(f3m, "kutya volt inkább szebb, mint okos.")
         menu = 0
         time.sleep(sleep)
     elif menu == 4:
