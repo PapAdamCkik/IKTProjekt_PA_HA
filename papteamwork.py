@@ -30,12 +30,16 @@ while menu!=6:
         f1tomb=[]
         f1m=-1
         kutya1=0
-        for i in range (n):
-            kutya1=0
-            f1m+=1
-            for i in range(f1m, len(tomb), n):
+        lepes=0
+        i=0
+        for v in range(m):
+            while lepes!=n:
                 kutya1+=tomb[i]
+                i+=1
+                lepes+=1
             f1tomb.append(kutya1)
+            lepes=0
+            kutya1=0
         print(f1tomb)
         maxi=0
         i=0
@@ -48,42 +52,29 @@ while menu!=6:
         f1m=n
         sorszam=0
         i=0
+        gyozelem=0
         nyert=0
         l=0
-        for l in range (m):
+        futas=0
+        for l in range (n):
             f1tomb.clear()
-            while i!=f1m:
+            i=+futas
+            while i<len(tomb) :
                 f1tomb.append(tomb[i])
-                i+=1
-            f1m+=n
+                i+=n
+            print(f1tomb)
+            futas+=1
             maxi=0
-            k=0
-            for k in range(0,len(f1tomb),1):
-                if f1tomb[k]>f1tomb[maxi]:
+            meny=0
+            for k in range(1,len(f1tomb),1):
+                if f1tomb[maxi]<f1tomb[k]:
                     maxi=k
-            db=0
-            u=0
-            if maxi==abszgyku:
-                for u in range(0,len(f1tomb),1):
-                    if f1tomb[u]==f1tomb[maxi]:
-                        db+=1
-                if db == 1:
-                    print(f"{sorszam+1}. kategóriában: Nyert")
-                    nyert+=1
-                else:
-                    print(f"{sorszam+1}. kategóriában: Döntetlen")
-                
-            else:
-                for u in range(0,len(f1tomb),1):
-                    if f1tomb[u]==f1tomb[maxi]:
-                        db+=1
-                if db == 1:
-                    print(f"{sorszam+1}. kategóriában: nem nyert")
-                else:
-                    print(f"{sorszam+1}. kategóriában: Döntetlen")
-            sorszam+=1
-            
-        print(f"Az abszolút győztes kutya {nyert} kategóriában nyert. ")
+            print(maxi)
+            # if maxi==abszgyku:
+            #     gyozelem+=1
+            if f1tomb[abszgyku]==f1tomb[maxi]:
+                gyozelem+=1
+        print(f"Az abszolút győztes kutya {gyozelem} kategóriában nyert")
         menu = 0
         time.sleep(sleep)
     elif menu == 2:
