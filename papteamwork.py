@@ -85,22 +85,22 @@ while menu != 6:
     elif menu == 2:
         print("3b feladat")
         print(tomb)
-        f1tomb = []
-        f1m = -1
+        f2tomb = []
+        f2m = -1
 
         # Kategóriák átlagértékeinek kiszámítása
         for i in range(n):
             kutya1 = 0
-            f1m += 1
-            for i in range(f1m, len(tomb), n):
+            f2m += 1 
+            for i in range(f2m, len(tomb), n):
                 kutya1 += tomb[i]
             kutya1 = round(kutya1 / m, 2)
-            f1tomb.append(kutya1)
+            f2tomb.append(kutya1)
 
         # Kategóriák kiírása
         sorszam = 0
         while sorszam != n:
-            print(f"{sorszam+1}. kategória: {f1tomb[sorszam]}")
+            print(f"{sorszam+1}. kategória: {f2tomb[sorszam]}")
             sorszam += 1
         menu = 0
         time.sleep(sleep)
