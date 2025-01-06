@@ -125,15 +125,14 @@ while menu != 6:
         print("3d feladat")
         print(tomb)
         f4tomb = []
-        f4m = -1
+        f4m = 0
 
         # Eredmények kiszámítása
-        for i in range(n):
-            kutya1 = 0
-            f4m += 1
-            for i in range(f4m, len(tomb), n):
-                kutya1 += tomb[i]
-            f4tomb.append(kutya1)
+        for i in range(1,len(tomb),n):
+            for s in range (n):
+                f4m += tomb[s+i-1]
+            f4tomb.append(f4m)
+            f4m=0
 
         print(f4tomb)
 
